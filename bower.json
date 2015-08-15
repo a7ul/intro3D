@@ -1,0 +1,21 @@
+{
+  "name": "intro3D",
+  "version": "0.0.0",
+  "authors": [
+    "Atul <atulanand94@gmail.com>"
+  ],
+  "description": "Intro JS 3D",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "introjs": "~1.0.0",
+    "lodash": "~3.10.1",
+    "jquery": "~2.1.4"
+  }
+}

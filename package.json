@@ -1,0 +1,14 @@
+{
+  "name": "intro3d",
+  "version": "1.0.0",
+  "description": "intro Js with 3D character",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atul R",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
