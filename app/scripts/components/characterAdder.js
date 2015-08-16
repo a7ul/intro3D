@@ -1,9 +1,9 @@
 /**
  * Created by atulr on 17/08/15.
  */
-'use strict';
-(function () {
 
+(function () {
+  'use strict';
   var intro3d = window.introJs.intro3d || {};
   intro3d.charactersCollection = {};
   intro3d.addCharacter = function (charConfig) {

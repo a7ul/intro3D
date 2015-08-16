@@ -1,21 +1,24 @@
 /**
  * Created by atulr on 08/08/15.
  */
-var intro3d = introJs.intro3d || {};
-var component3D = intro3d.component3D = intro3d.component3D || {};
+(function () {
+  'use strict';
+  var intro3d = window.introJs.intro3d || {};
+  var component3D = intro3d.component3D = intro3d.component3D || {};
 
-component3D.rendererConfig = function () {
-  var init = function (appendDom, areaHeight, areaWidth) {
-    var renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
-    renderer.setSize(areaWidth, areaHeight);
-    renderer.shadowMapEnabled = true;
-    $(appendDom).empty();
-    appendDom[0].appendChild(renderer.domElement);
-    return renderer;
-  };
+  component3D.rendererConfig = function () {
+    var init = function (appendDom, areaHeight, areaWidth) {
+      var renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
+      renderer.setSize(areaWidth, areaHeight);
+      renderer.shadowMapEnabled = true;
+      $(appendDom).empty();
+      appendDom[0].appendChild(renderer.domElement);
+      return renderer;
+    };
 
-  return {
-    init: init
-  };
-}();
+    return {
+      init: init
+    };
+  }();
 
+}());
