@@ -13,6 +13,11 @@
       var mesh = null;
       var loader = new THREE.JSONLoader();
 
+      if(!characterJsonPath){
+        defer.reject();
+        return defer.promise;
+      }
+
       loader.load(characterJsonPath, function (geometry, materials) {
         _.forEach(materials, function (m) {
           m.skinning = true;

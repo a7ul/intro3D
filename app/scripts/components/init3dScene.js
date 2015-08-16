@@ -7,9 +7,9 @@
   var component3D = intro3d.component3D;
   var clock = new THREE.Clock();
 
-  component3D.init3DCharacter = function () {
+  component3D.init3DCharacterScene = function () {
 
-    var _init3DCharacterForSingleDom = function (appendDom, characterName, animationName) {
+    var _init3DCharacterSceneForSingleDom = function (appendDom, characterName, animationName) {
       var injectDom = $(appendDom);
       var areaHeight = $(appendDom).height();
       var areaWidth = $(appendDom).width();
@@ -21,7 +21,11 @@
       var ambientLight = component3D.lightGenerator.initAmbient();
 
       var scene = new THREE.Scene();
-      component3D.characterGenerator.init(intro3d.charactersCollection[characterName].charJsonPath, intro3d.charactersCollection[characterName].charAnimeJsonPath).then(function (character) {
+
+      var charJsonPath = intro3d.charactersCollection[characterName] ? intro3d.charactersCollection[characterName].charJsonPath : null;
+      var charAnimeJsonPath = intro3d.charactersCollection[characterName] ? intro3d.charactersCollection[characterName].charAnimeJsonPath : null;
+
+      component3D.characterGenerator.init(charJsonPath, charAnimeJsonPath).then(function (character) {
         scene.add(character);
         character.animator(animationName);
         char = character;
@@ -41,17 +45,17 @@
       animate();
     };
 
-    var init3DCharacterForAllDom = function (injectDoms, characterJsonPath, animationName, characterAnimationJsonPath) {
+    var init3DCharacterSceneForAllDom = function (injectDoms, characterJsonPath, animationName, characterAnimationJsonPath) {
       _.forEach($(injectDoms), function (domEle) {
-        _init3DCharacterForSingleDom(domEle, characterJsonPath, animationName, characterAnimationJsonPath);
+        _init3DCharacterSceneForSingleDom(domEle, characterJsonPath, animationName, characterAnimationJsonPath);
       });
     };
 
     return {
-      init: init3DCharacterForAllDom
+      init: init3DCharacterSceneForAllDom
     }
   }();
 
-  intro3d.init3DCharacter = component3D.init3DCharacter.init;
+  intro3d.init3DCharacterScene = component3D.init3DCharacterScene.init;
 
 }());

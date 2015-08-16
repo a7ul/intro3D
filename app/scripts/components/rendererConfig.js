@@ -8,7 +8,7 @@
 
   component3D.rendererConfig = function () {
     var init = function (appendDom, areaHeight, areaWidth) {
-      var renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
+      var renderer = intro3d.renderer || new THREE.WebGLRenderer({alpha: true, antialias: true});
       renderer.setSize(areaWidth, areaHeight);
       renderer.shadowMapEnabled = true;
       $(appendDom).empty();
