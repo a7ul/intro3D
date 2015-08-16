@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var intro3d = window.intro3d || {};
+var intro3d = introJs.intro3d || {};
 var component3D = intro3d.component3D = intro3d.component3D || {};
 
 component3D.cameraGenerator = function () {

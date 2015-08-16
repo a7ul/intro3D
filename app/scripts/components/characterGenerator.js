@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var intro3d = window.intro3d || {};
+var intro3d = introJs.intro3d || {};
 var component3D = intro3d.component3D = intro3d.component3D || {};
 
 component3D.characterGenerator = function () {
@@ -36,6 +36,9 @@ component3D.characterGenerator = function () {
       return;
     }
     var selected = _.find(animationList, {'name': animeName});
+    if(selected === undefined){
+      console.log('Animation ',animeName ,'Not Found !');
+    }
     var animation = new THREE.Animation(mesh, selected);
     animation.play();
   };
@@ -49,7 +52,7 @@ component3D.characterGenerator = function () {
         defer.resolve(result);
       },
       error: function (err) {
-        console.log('error while loading animation ', err);
+        console.log('error while loading animation file ',characterAnimationJsonPath,' ', err);
         defer.reject(err);
       }
     });

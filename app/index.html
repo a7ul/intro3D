@@ -3,13 +3,27 @@
   <title>
     intro 3d
   </title>
+  <link rel="stylesheet" href="../bower_components/bootstrap-css/css/bootstrap.css"/>
+  <!-- Add IntroJs styles -->
+  <link href="../bower_components/introjs/introjs.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css"/>
+
 </head>
 <body>
+<div data-step="1" data-tooltipClass='forLastStep' data-intro="Get it, use it." data-character="boxguy"
+     data-characterAnimation="walkCycle" data-characterPosition="left">
+  <h1>Hello</h1>
+</div>
+<div data-step="2" data-tooltipClass='forLastStep' data-intro="To.">
+  <h1>Bye</h1>
+</div>
+<div data-step="3" data-tooltipClass='forLastStep' data-intro="adsadasd.">
+  <h1>WOW</h1>
+</div>
+<div data-step="4" data-tooltipClass='forLastStep' data-intro="qweq.">
+  <h1>YOLO</h1>
+</div>
 
-<div class="intro-example" id="intro-example">a</div>
-<div class="intro-example">a</div>
-<div class="intro-example">a</div>
 <!--------------------------------------------------------->
 <!--           Library Scripts                           -->
 <!--------------------------------------------------------->
@@ -21,11 +35,15 @@
 <!--------------------------------------------------------->
 <!--           Component scripts                         -->
 <!--------------------------------------------------------->
+<script src="./scripts/components/intro3DMod.js"></script>
 <script src="./scripts/components/cameraGenerator.js"></script>
 <script src="./scripts/components/characterGenerator.js"></script>
 <script src="./scripts/components/lightGenerator.js"></script>
 <script src="./scripts/components/rendererConfig.js"></script>
-<script src="./scripts/components/initIntro3d.js"></script>
+<script src="./scripts/components/init3dScene.js"></script>
+<script src="./scripts/components/domManipulator.js"></script>
+<script src="./scripts/components/intro3DInit.js"></script>
+<script src="./scripts/components/characterAdder.js"></script>
 <script src="./scripts/main.js"></script>
 </body>
 </html>
