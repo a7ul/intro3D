@@ -9,9 +9,9 @@ var clean = require('gulp-clean');
 gulp.task('usemin',['clean'], function () {
   return gulp.src('app/*.html')
     .pipe(usemin({
-      css: [minifyCss(), 'concat'],
-      html: [minifyHtml({empty: true})],
-      js: [uglify()]
+      css: ['concat'],
+      html: [],
+      js: []
     }))
     .pipe(gulp.dest('dist/'));
 });
@@ -34,4 +34,4 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('default',['compress-scripts','copy-assets']);
+gulp.task('default',['usemin','copy-assets']);
