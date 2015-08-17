@@ -9,6 +9,7 @@
     var init3dDom = function () {
       var toolTipContainer = $('.introjs-tooltip');
       var toolTipHeight = toolTipContainer.height() + 20;
+      $('.tooltip-3d-character').remove();
       var characterContainer = $('<div class="tooltip-3d-character"></div>');
       characterContainer.height(toolTipHeight);
       characterContainer.width(toolTipHeight);

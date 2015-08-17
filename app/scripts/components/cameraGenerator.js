@@ -7,9 +7,9 @@
   var component3D = intro3d.component3D = intro3d.component3D || {};
 
   component3D.cameraGenerator = function () {
-    var init = function (areaWidth, areaHeight) {
+    var init = function (areaWidth, areaHeight ,shrink) {
       var camera = new THREE.PerspectiveCamera(75, areaWidth / areaHeight, 1, 1000);
-      camera.position.z = 10;
+      camera.position.z = shrink || 10;
       return camera;
     };
     return {

@@ -9,23 +9,26 @@
   var intro3d = window.introJs.intro3d || {};
 
   intro3d.initialize = function (introJSInstance) {
-
     intro3d.domManipulator.init3dDom();
-
     var getCharacterDataFromDomAndAddCharacter = function () {
+
       var currentToolTippedElement = introJSInstance._introItems[introJSInstance._currentStep].element;
       var characterName = $(currentToolTippedElement).attr('data-character');
       var animationName = $(currentToolTippedElement).attr('data-character-animation');
       var position = $(currentToolTippedElement).attr('data-character-position');
-      intro3d.init3DCharacterScene('.tooltip-3d-character', characterName, animationName);
+      var shrink = $(currentToolTippedElement).attr('data-character-shrink');
+      var offset = ($('.tooltip-3d-character').height());
+
+      intro3d.init3DCharacterScene('.tooltip-3d-character', characterName, animationName, shrink);
+
       if (position === 'right') {
         $('.tooltip-3d-character').css({
-          "right": -1 * ($('.introjs-tooltip').height() + 20),
+          "right": -1 * offset,
           "left": ''
         });
       } else {
         $('.tooltip-3d-character').css({
-          "left": -1 * ($('.introjs-tooltip').height() + 20),
+          "left": -1 * offset,
           "right": ''
         });
       }
@@ -36,13 +39,11 @@
     $('.introjs-nextbutton').click(getCharacterDataFromDomAndAddCharacter);
     $('.introjs-prevbutton').click(getCharacterDataFromDomAndAddCharacter);
     $('.introjs-bullets > ul > li >a').click(getCharacterDataFromDomAndAddCharacter);
+    $('.introjs-skipbutton').click(function(){
+      $('.tooltip-3d-character').remove();
+    });
 
   };
-  //function () {
-  //  var updatedStep = introJSInstance._introItems[introJSInstance._currentStep].step;
-  //  console.log('next Step Clicked ', 'updated to ', updatedStep);
-  //  getCharacterDataFromDomAndAddCharacter();
-  //};
-
+  //introJSInstance._introItems[introJSInstance._currentStep].step;
 
 }());

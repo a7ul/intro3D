@@ -9,13 +9,13 @@
 
   component3D.init3DCharacterScene = function () {
 
-    var _init3DCharacterSceneForSingleDom = function (appendDom, characterName, animationName) {
+    var _init3DCharacterSceneForSingleDom = function (appendDom, characterName, animationName ,shrink) {
       var injectDom = $(appendDom);
       var areaHeight = $(appendDom).height();
       var areaWidth = $(appendDom).width();
       var char = null;
 
-      var camera = component3D.cameraGenerator.init(areaHeight, areaWidth);
+      var camera = component3D.cameraGenerator.init(areaHeight, areaWidth ,shrink);
       var renderer = component3D.rendererConfig.init(injectDom, areaHeight, areaWidth);
       var light = component3D.lightGenerator.init();
       var ambientLight = component3D.lightGenerator.initAmbient();
@@ -45,9 +45,9 @@
       animate();
     };
 
-    var init3DCharacterSceneForAllDom = function (injectDoms, characterJsonPath, animationName, characterAnimationJsonPath) {
+    var init3DCharacterSceneForAllDom = function (injectDoms, characterJsonPath, animationName, characterAnimationJsonPath ,shrink) {
       _.forEach($(injectDoms), function (domEle) {
-        _init3DCharacterSceneForSingleDom(domEle, characterJsonPath, animationName, characterAnimationJsonPath);
+        _init3DCharacterSceneForSingleDom(domEle, characterJsonPath, animationName, characterAnimationJsonPath ,shrink);
       });
     };
 
