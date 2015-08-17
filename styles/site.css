@@ -6932,3 +6932,7 @@ tr.introjs-showElement > th {
   height: 300px;
   display: inline-block;
 }
+
+.center-align{
+  text-align: center;
+}
