@@ -9,5 +9,5 @@ introJs.intro3d.addCharacter({
   charAnimeJsonPath: 'assets/models/boxguy.animations.json'
 });
 
-window.introInstance = introJs().setOption('tooltipClass', 'customDefault').start();
+var introInstance = introJs().setOption('tooltipClass', 'customDefault').start();
 introJs.intro3d.initialize(introInstance);
