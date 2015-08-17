@@ -3,39 +3,46 @@
   <title>
     intro 3d
   </title>
+  <!-- build:css styles/site.css -->
   <link rel="stylesheet" href="../bower_components/bootstrap-css/css/bootstrap.css"/>
-  <!-- Add IntroJs styles -->
   <link href="../bower_components/introjs/introjs.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css"/>
+  <!-- endbuild -->
 
 </head>
 <body>
-<div data-step="1" data-tooltipClass='forLastStep' data-intro="Get it, use it." data-character="boxguy"
+<div data-step="1" data-tooltipClass='forLastStep' data-intro="The character with animation on right scaled up." data-character="boxguy"
      data-character-animation="walkCycle" data-character-position="right" data-character-shrink="7">
   <h1>Hello</h1>
 </div>
-<div data-step="4" data-tooltipClass='forLastStep' data-intro="To. ASD  ASD ASD ASD ASDA SD ASD ASD ASD AS DAS DAS ASD ASD SA DASD ASD AS DAS DASD ADS " data-character="boxguy"
-     data-character-animation="" data-character-position="left">
+<div data-step="2" data-tooltipClass='forLastStep'
+     data-intro="The character without animation on left"
+     data-character="boxguy"
+     data-character-position="left">
   <h1>Bye</h1>
 </div>
-<div data-step="5" data-tooltipClass='forLastStep' data-intro="adsadasd.">
-  <h1>WOW</h1>
+<div data-step="3" data-tooltipClass='forLastStep' data-intro="Test.">
+  <h1>Test 1</h1>
 </div>
-<div data-step="6" data-tooltipClass='forLastStep' data-intro="qweq.">
-  <h1>YOLO</h1>
+<div data-step="4" data-tooltipClass='forLastStep' data-intro="Test2.">
+  <h1>Test 2</h1>
 </div>
 
+<div> Visit </div>
 <!--------------------------------------------------------->
 <!--           Library Scripts                           -->
 <!--------------------------------------------------------->
-<script src="./scripts/lib/three.min.js"></script>
-<script src="./scripts/lib/q.js"></script>
-<script src="../bower_components/introjs/intro.js"></script>
+<!-- build:js scripts/vendor.js -->
+<script src="../bower_components/introjs/minified/intro.min.js"></script>
 <script src="../bower_components/lodash/lodash.min.js"></script>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/three.js/three.min.js"></script>
+<script src="../bower_components/q/q.js"></script>
+<!-- endbuild -->
 <!--------------------------------------------------------->
 <!--           Component scripts                         -->
 <!--------------------------------------------------------->
+<!-- build:js1 scripts/intro3d.js -->
 <script src="./scripts/components/intro3DMod.js"></script>
 <script src="./scripts/components/cameraGenerator.js"></script>
 <script src="./scripts/components/characterGenerator.js"></script>
@@ -45,6 +52,11 @@
 <script src="./scripts/components/domManipulator.js"></script>
 <script src="./scripts/components/intro3DInit.js"></script>
 <script src="./scripts/components/characterAdder.js"></script>
+<!-- endbuild -->
+
+<!-- build:js1 scripts/site.js -->
 <script src="./scripts/main.js"></script>
+<!-- endbuild -->
+
 </body>
 </html>

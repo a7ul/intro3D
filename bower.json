@@ -17,6 +17,8 @@
     "introjs": "~1.0.0",
     "lodash": "~3.10.1",
     "jquery": "~2.1.4",
-    "bootstrap-css": "~3.3.4"
+    "bootstrap-css": "~3.3.4",
+    "three.js": "~0.71.0",
+    "q":"1.4.1"
   }
 }
